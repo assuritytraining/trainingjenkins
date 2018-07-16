@@ -13,6 +13,14 @@ pipeline {
         echo "${params.Greeting}, welcome!"
       }
     }
+    stage('Deploy') {
+      input {
+        message 'Hey user! Shall we continue?'
+      }
+      steps {
+        echo 'Continuing with deployment'
+      }
+    }
   }
   environment {
     NAME = 'Testing'
