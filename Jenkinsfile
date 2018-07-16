@@ -10,10 +10,12 @@ pipeline {
          }
       }
       stage('Deploy') {
-         agent none
-         steps {
-            echo 'Deploying....'
-         }
+        agent {
+          label 'jdk8'
+        }
+        steps {
+          echo 'Deploying....'
+        }
       }
   }
 }
