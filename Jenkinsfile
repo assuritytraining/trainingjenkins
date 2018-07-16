@@ -10,6 +10,7 @@ pipeline {
         echo "User: ${CREDS_USR}\nPass: ${CREDS_PSW}"
         echo "${TEST_USER_USR}"
         echo "${TEST_USER_PSW}"
+        echo "${params.Greeting}, welcome!"
       }
     }
   }
@@ -17,5 +18,8 @@ pipeline {
     NAME = 'Testing'
     CREDS = credentials('testing')
     TEST_USER = credentials('test-user')
+  }
+  parameters {
+    string(name: 'Greeting', defaultValue: 'Hello', description: 'Name yourself!')
   }
 }
